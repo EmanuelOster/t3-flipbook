@@ -4,8 +4,6 @@ namespace WapplerSystems\Flipbook\ViewHelpers;
 
 use TYPO3\CMS\Core\Resource\Exception\InvalidFileException;
 use TYPO3\CMS\Core\Resource\File;
-use TYPO3\CMS\Core\Utility\DebugUtility;
-use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Core\Utility\PathUtility;
 use TYPO3\CMS\Extbase\Mvc\Web\Routing\UriBuilder;
 use TYPO3\CMS\Extbase\Utility\LocalizationUtility;
@@ -139,29 +137,6 @@ class InlineJsViewHelper extends AbstractTagBasedViewHelper
         return "<script>" . $content . "</script>";
     }
 
-    /**
-     * @param int $pageUid target PID
-     * @param array $additionalParams query parameters to be attached to the resulting URI
-     * @param integer $pageType type of the target page. See typolink.parameter
-     * @param boolean $noCache set this to disable caching for the target page. You should not need this.
-     * @param boolean $noCacheHash set this to supress the cHash query parameter created by TypoLink. You should not need this.
-     * @param string $section the anchor to be added to the URI
-     * @param boolean $linkAccessRestrictedPages If set, links pointing to access restricted pages will still link to the page even though the page cannot be accessed.
-     * @param boolean $absolute If set, the URI of the rendered link is absolute
-     * @param boolean $addQueryString If set, the current query parameters will be kept in the URI
-     * @param array $argumentsToBeExcludedFromQueryString arguments to be removed from the URI. Only active if $addQueryString = TRUE
-     * @param string|null $addQueryStringMethod Set which parameters will be kept. Only active if $addQueryString = TRUE
-     * @return string Rendered page URI
-     */
-    public function uriPage(int $pageUid, array $additionalParams = [], int $pageType = 0, bool $noCache = false, bool $noCacheHash = false, string $section = '', bool $linkAccessRestrictedPages = false, bool $absolute = false, bool $addQueryString = FALSE, array $argumentsToBeExcludedFromQueryString = [], string $addQueryStringMethod = NULL)
-    {
-
-        /** @var UriBuilder $uriBuilder */
-        $uriBuilder = GeneralUtility::makeInstance(UriBuilder::class);
-        $uri = $uriBuilder->setTargetPageUid($pageUid)->setTargetPageType($pageType)->setNoCache($noCache)->setUseCacheHash(!$noCacheHash)->setSection($section)->setLinkAccessRestrictedPages($linkAccessRestrictedPages)->setArguments($additionalParams)->setCreateAbsoluteUri($absolute)->setAddQueryString($addQueryString)->setArgumentsToBeExcludedFromQueryString($argumentsToBeExcludedFromQueryString)->setAddQueryStringMethod($addQueryStringMethod)->build();
-        return $uri;
-    }
-
 
     /**
      */
@@ -172,7 +147,7 @@ class InlineJsViewHelper extends AbstractTagBasedViewHelper
             $uri = PathUtility::getPublicResourceWebPath($path);
         } catch (InvalidFileException $e) {
         }
-        return GeneralUtility::locationHeaderUrl($uri);
+        return $uri;
     }
 
 

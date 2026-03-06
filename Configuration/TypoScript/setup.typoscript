@@ -1,3 +1,12 @@
+tt_content.flipbook_show =< lib.contentElement
+tt_content.flipbook_show {
+    templateName = Generic
+    20 = USER
+    20.userFunc = TYPO3\CMS\Extbase\Core\Bootstrap->run
+    20.extensionName = Flipbook
+    20.pluginName = Show
+}
+
 plugin.tx_flipbook {
     view {
         templateRootPath = {$plugin.tx_flipbook.view.templateRootPath}

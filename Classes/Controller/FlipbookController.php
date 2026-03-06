@@ -19,10 +19,7 @@ use TYPO3\CMS\Frontend\ContentObject\ContentObjectRenderer;
 class FlipbookController extends ActionController
 {
 
-    /**
-     * @var \TYPO3\CMS\Extbase\Configuration\ConfigurationManagerInterface
-     */
-    protected $configurationManager;
+    protected ConfigurationManagerInterface $configurationManager;
 
     /**
      * Injects the Configuration Manager and is initializing the framework settings
@@ -30,7 +27,7 @@ class FlipbookController extends ActionController
      * @param \TYPO3\CMS\Extbase\Configuration\ConfigurationManagerInterface $configurationManager Instance of the Configuration Manager
      * @return void
      */
-    public function injectConfigurationManager(ConfigurationManagerInterface $configurationManager)
+    public function injectConfigurationManager(ConfigurationManagerInterface $configurationManager): void
     {
         parent::injectConfigurationManager($configurationManager);
 
@@ -119,7 +116,7 @@ class FlipbookController extends ActionController
             /** @var FileRepository $fileRepository */
             $fileRepository = GeneralUtility::makeInstance(FileRepository::class);
             /** @var FileReference $preview */
-            $preview = $fileRepository->findByRelation('tt_content', 'settings.preview', $this->configurationManager->getContentObject()->data['uid']);
+            $preview = $fileRepository->findByRelation('tt_content', 'settings.preview', $this->request->getAttribute('currentContentObject')->data['uid']);
             $this->view->assign('preview', $preview[0]);
         }
         if (!is_array($this->settings['toc'] ?? false)) {

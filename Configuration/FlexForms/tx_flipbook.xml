@@ -6,49 +6,38 @@
     <sheets>
         <options>
             <ROOT>
-                <TCEforms>
                     <sheetTitle>LLL:EXT:flipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.options
                     </sheetTitle>
-                    <cshFile>LLL:EXT:flipbook/Resources/Private/Language/locallang_csh_flexform_pi1.xlf</cshFile>
-                </TCEforms>
                 <type>array</type>
                 <el>
                     <settings.fullbook type="array">
-                        <TCEforms type="array">
                             <label>Full-Width Book</label>
                             <config type="array">
                                 <type>check</type>
                             </config>
-                        </TCEforms>
                     </settings.fullbook>
 
                     <settings.header type="array">
-                        <TCEforms type="array">
                             <label>
                                 LLL:EXT:flipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.options.header
                             </label>
                             <config type="array">
                                 <type>input</type>
                                 <size>48</size>
-                                <eval>trim</eval>
                             </config>
-                        </TCEforms>
                     </settings.header>
 
                     <settings.download>
-                        <TCEforms>
                             <label>
                                 LLL:EXT:flipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.options.download
                             </label>
                             <config>
                                 <type>link</type>
                             </config>
-                        </TCEforms>
                     </settings.download>
 
 
                     <settings.preview>
-                        <TCEforms>
                             <label>
                                 LLL:EXT:flipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.options.thumb
                             </label>
@@ -97,21 +86,18 @@
                                 <maxitems>1</maxitems>
                                 <minitems>0</minitems>
                             </config>
-                        </TCEforms>
                     </settings.preview>
 
                     <settings.description>
-                        <TCEforms type="array">
                             <config type="array">
                                 <type>text</type>
                                 <cols>48</cols>
                                 <rows>5</rows>
+                                <enableRichtext>1</enableRichtext>
                             </config>
                             <label>
                                 LLL:EXT:flipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.options.description
                             </label>
-                            <defaultExtras>richtext[*]:rte_transform[flag=rte_enabled|mode=ts_css]</defaultExtras>
-                        </TCEforms>
                     </settings.description>
 
 
@@ -121,15 +107,12 @@
 
         <sDEF>
             <ROOT>
-                <TCEforms>
                     <sheetTitle>LLL:EXT:flipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.folder
                     </sheetTitle>
-                </TCEforms>
                 <type>array</type>
                 <el>
 
                     <settings.mode type="array">
-                        <TCEforms type="array">
                             <label>
                                 LLL:EXT:flipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.options.mode
                             </label>
@@ -148,45 +131,37 @@
                                     </numIndex>
                                 </items>
                             </config>
-                        </TCEforms>
                     </settings.mode>
 
                     <settings.folder>
-                        <TCEforms>
                             <label>
                                 LLL:EXT:flipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.folder.bigimages
                             </label>
                             <displayCond>FIELD:settings.mode:=:folders</displayCond>
                             <config>
-                                <type>group</type>
-                                <internal_type>folder</internal_type>
+                                <type>folder</type>
                                 <max_size>1</max_size>
                                 <maxitems>1</maxitems>
                                 <minitems>1</minitems>
                                 <autoSizeMax>1</autoSizeMax>
-                                <eval>required</eval>
+                                <required>1</required>
                             </config>
-                        </TCEforms>
                     </settings.folder>
                     <settings.thumbs>
-                        <TCEforms>
                             <label>
                                 LLL:EXT:flipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.folder.smallimages
                             </label>
                             <displayCond>FIELD:settings.mode:=:folders</displayCond>
                             <config>
-                                <type>group</type>
-                                <internal_type>folder</internal_type>
+                                <type>folder</type>
                                 <max_size>1</max_size>
                                 <maxitems>1</maxitems>
                                 <autoSizeMax>1</autoSizeMax>
                             </config>
-                        </TCEforms>
                     </settings.thumbs>
 
 
                     <settings.pdfUrl>
-                        <TCEforms>
                             <label>
                                 LLL:EXT:flipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.pdf.file
                             </label>
@@ -194,7 +169,6 @@
                             <config>
                                 <type>link</type>
                             </config>
-                        </TCEforms>
                     </settings.pdfUrl>
 
 
@@ -204,10 +178,8 @@
 
         <toc>
             <ROOT>
-                <TCEforms>
                     <sheetTitle>LLL:EXT:flipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.toc
                     </sheetTitle>
-                </TCEforms>
                 <type>array</type>
                 <el>
                     <settings.toc type="array">
@@ -224,28 +196,23 @@
                                 </label>
                                 <el type="array">
                                     <field_toc_label type="array">
-                                        <TCEforms type="array">
                                             <config type="array">
                                                 <type>input</type>
                                                 <size>48</size>
-                                                <eval>trim</eval>
                                             </config>
                                             <label>
                                                 LLL:EXT:flipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.toc.chapterlabel
                                             </label>
-                                        </TCEforms>
                                     </field_toc_label>
                                     <field_toc_page type="array">
-                                        <TCEforms type="array">
                                             <config type="array">
                                                 <type>input</type>
                                                 <size>48</size>
-                                                <eval>trim,int</eval>
+                                                <eval>int</eval>
                                             </config>
                                             <label>
                                                 LLL:EXT:flipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.toc.page
                                             </label>
-                                        </TCEforms>
                                     </field_toc_page>
                                 </el>
                             </field_toc_entry>
@@ -257,15 +224,12 @@
 
         <pluginSettings>
             <ROOT>
-                <TCEforms>
                     <sheetTitle>
                         LLL:EXT:flipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.pluginSettings
                     </sheetTitle>
-                </TCEforms>
                 <type>array</type>
                 <el>
                     <settings.hideMenu>
-                        <TCEforms>
                             <label>
                                 LLL:EXT:flipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.pluginSettings.hideMenu
                             </label>
@@ -291,11 +255,9 @@
                                     </numIndex>
                                 </items>
                             </config>
-                        </TCEforms>
                     </settings.hideMenu>
 
                     <settings.sideNavigationButtons>
-                        <TCEforms>
                             <label>
                                 LLL:EXT:flipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.pluginSettings.sideNavigationButtons
                             </label>
@@ -321,22 +283,17 @@
                                     </numIndex>
                                 </items>
                             </config>
-                        </TCEforms>
                     </settings.sideNavigationButtons>
                     <settings.pdfPageScale>
-                        <TCEforms>
                             <label>
                                 LLL:EXT:flipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.pluginSettings.pdfPageScale
                             </label>
                             <config>
                                 <type>input</type>
                                 <size>48</size>
-                                <eval>trim</eval>
                             </config>
-                        </TCEforms>
                     </settings.pdfPageScale>
                     <settings.skin>
-                        <TCEforms type="array">
                             <label>
                                 LLL:EXT:flipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.pluginSettings.skin
                             </label>
@@ -362,22 +319,17 @@
                                     </numIndex>
                                 </items>
                             </config>
-                        </TCEforms>
                     </settings.skin>
                     <settings.startPage>
-                        <TCEforms>
                             <label>
                                 LLL:EXT:flipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.pluginSettings.startPage
                             </label>
                             <config>
                                 <type>input</type>
                                 <size>48</size>
-                                <eval>trim</eval>
                             </config>
-                        </TCEforms>
                     </settings.startPage>
                     <settings.sounds>
-                        <TCEforms>
                             <label>
                                 LLL:EXT:flipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.pluginSettings.sounds
                             </label>
@@ -403,58 +355,44 @@
                                     </numIndex>
                                 </items>
                             </config>
-                        </TCEforms>
                     </settings.sounds>
                     <settings.pageWidth>
-                        <TCEforms>
                             <label>
                                 LLL:EXT:flipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.pluginSettings.pageWidth
                             </label>
                             <config>
                                 <type>input</type>
                                 <size>48</size>
-                                <eval>trim</eval>
                             </config>
-                        </TCEforms>
                     </settings.pageWidth>
                     <settings.pageHeight>
-                        <TCEforms>
                             <label>
                                 LLL:EXT:flipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.pluginSettings.pageHeight
                             </label>
                             <config>
                                 <type>input</type>
                                 <size>48</size>
-                                <eval>trim</eval>
                             </config>
-                        </TCEforms>
                     </settings.pageHeight>
                     <settings.thumbnailWidth>
-                        <TCEforms>
                             <label>
                                 LLL:EXT:flipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.pluginSettings.thumbnailWidth
                             </label>
                             <config>
                                 <type>input</type>
                                 <size>48</size>
-                                <eval>trim</eval>
                             </config>
-                        </TCEforms>
                     </settings.thumbnailWidth>
                     <settings.thumbnailHeight>
-                        <TCEforms>
                             <label>
                                 LLL:EXT:flipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.pluginSettings.thumbnailHeight
                             </label>
                             <config>
                                 <type>input</type>
                                 <size>48</size>
-                                <eval>trim</eval>
                             </config>
-                        </TCEforms>
                     </settings.thumbnailHeight>
                     <settings.contentOnStart>
-                        <TCEforms>
                             <label>
                                 LLL:EXT:flipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.pluginSettings.contentOnStart
                             </label>
@@ -480,10 +418,8 @@
                                     </numIndex>
                                 </items>
                             </config>
-                        </TCEforms>
                     </settings.contentOnStart>
                     <settings.thumbnailsOnStart>
-                        <TCEforms>
                             <label>
                                 LLL:EXT:flipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.pluginSettings.thumbnailsOnStart
                             </label>
@@ -509,10 +445,8 @@
                                     </numIndex>
                                 </items>
                             </config>
-                        </TCEforms>
                     </settings.thumbnailsOnStart>
                     <settings.singlePageMode>
-                        <TCEforms>
                             <label>
                                 LLL:EXT:flipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.pluginSettings.singlePageMode
                             </label>
@@ -538,7 +472,6 @@
                                     </numIndex>
                                 </items>
                             </config>
-                        </TCEforms>
                     </settings.singlePageMode>
 
                 </el>
@@ -547,15 +480,12 @@
 
         <mobileSettings>
             <ROOT>
-                <TCEforms>
                     <sheetTitle>
                         LLL:EXT:flipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.mobileSettings
                     </sheetTitle>
-                </TCEforms>
                 <type>array</type>
                 <el>
                     <settings.singlePageModeIfMobile>
-                        <TCEforms>
                             <label>
                                 LLL:EXT:flipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.mobileSettings.singlePageModeIfMobile
                             </label>
@@ -581,10 +511,8 @@
                                     </numIndex>
                                 </items>
                             </config>
-                        </TCEforms>
                     </settings.singlePageModeIfMobile>
                     <settings.pdfBrowserViewerIfMobile>
-                        <TCEforms>
                             <label>
                                 LLL:EXT:flipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.mobileSettings.pdfBrowserViewerIfMobile
                             </label>
@@ -610,10 +538,8 @@
                                     </numIndex>
                                 </items>
                             </config>
-                        </TCEforms>
                     </settings.pdfBrowserViewerIfMobile>
                     <settings.btnTocIfMobile>
-                        <TCEforms>
                             <label>
                                 LLL:EXT:flipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.mobileSettings.btnTocIfMobile
                             </label>
@@ -639,10 +565,8 @@
                                     </numIndex>
                                 </items>
                             </config>
-                        </TCEforms>
                     </settings.btnTocIfMobile>
                     <settings.btnThumbsIfMobile>
-                        <TCEforms>
                             <label>
                                 LLL:EXT:flipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.mobileSettings.btnThumbsIfMobile
                             </label>
@@ -668,10 +592,8 @@
                                     </numIndex>
                                 </items>
                             </config>
-                        </TCEforms>
                     </settings.btnThumbsIfMobile>
                     <settings.btnShareIfMobile>
-                        <TCEforms>
                             <label>
                                 LLL:EXT:flipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.mobileSettings.btnShareIfMobile
                             </label>
@@ -697,10 +619,8 @@
                                     </numIndex>
                                 </items>
                             </config>
-                        </TCEforms>
                     </settings.btnShareIfMobile>
                     <settings.btnDownloadPagesIfMobile>
-                        <TCEforms>
                             <label>
                                 LLL:EXT:flipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.mobileSettings.btnDownloadPagesIfMobile
                             </label>
@@ -726,10 +646,8 @@
                                     </numIndex>
                                 </items>
                             </config>
-                        </TCEforms>
                     </settings.btnDownloadPagesIfMobile>
                     <settings.btnDownloadPdfIfMobile>
-                        <TCEforms>
                             <label>
                                 LLL:EXT:flipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.mobileSettings.btnDownloadPdfIfMobile
                             </label>
@@ -755,10 +673,8 @@
                                     </numIndex>
                                 </items>
                             </config>
-                        </TCEforms>
                     </settings.btnDownloadPdfIfMobile>
                     <settings.btnSoundIfMobile>
-                        <TCEforms>
                             <label>
                                 LLL:EXT:flipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.mobileSettings.btnSoundIfMobile
                             </label>
@@ -784,10 +700,8 @@
                                     </numIndex>
                                 </items>
                             </config>
-                        </TCEforms>
                     </settings.btnSoundIfMobile>
                     <settings.btnExpandIfMobile>
-                        <TCEforms>
                             <label>
                                 LLL:EXT:flipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.mobileSettings.btnExpandIfMobile
                             </label>
@@ -813,10 +727,8 @@
                                     </numIndex>
                                 </items>
                             </config>
-                        </TCEforms>
                     </settings.btnExpandIfMobile>
                     <settings.btnPrintIfMobile>
-                        <TCEforms>
                             <label>
                                 LLL:EXT:flipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.mobileSettings.btnPrintIfMobile
                             </label>
@@ -842,7 +754,6 @@
                                     </numIndex>
                                 </items>
                             </config>
-                        </TCEforms>
                     </settings.btnPrintIfMobile>
 
                 </el>
@@ -851,15 +762,12 @@
 
         <socialshare>
             <ROOT>
-                <TCEforms>
                     <sheetTitle>
                         LLL:EXT:flipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.socialshare
                     </sheetTitle>
-                </TCEforms>
                 <type>array</type>
                 <el>
                     <settings.google_plus>
-                        <TCEforms>
                             <label>
                                 LLL:EXT:flipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.socialshare.google_plus
                             </label>
@@ -885,10 +793,8 @@
                                     </numIndex>
                                 </items>
                             </config>
-                        </TCEforms>
                     </settings.google_plus>
                     <settings.twitter>
-                        <TCEforms>
                             <label>
                                 LLL:EXT:flipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.socialshare.twitter
                             </label>
@@ -914,10 +820,8 @@
                                     </numIndex>
                                 </items>
                             </config>
-                        </TCEforms>
                     </settings.twitter>
                     <settings.facebook>
-                        <TCEforms>
                             <label>
                                 LLL:EXT:flipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.socialshare.facebook
                             </label>
@@ -943,10 +847,8 @@
                                     </numIndex>
                                 </items>
                             </config>
-                        </TCEforms>
                     </settings.facebook>
                     <settings.pinterest>
-                        <TCEforms>
                             <label>
                                 LLL:EXT:flipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.socialshare.pinterest
                             </label>
@@ -972,10 +874,8 @@
                                     </numIndex>
                                 </items>
                             </config>
-                        </TCEforms>
                     </settings.pinterest>
                     <settings.email>
-                        <TCEforms>
                             <label>
                                 LLL:EXT:flipbook/Resources/Private/Language/locallang_db.xlf:flexform.sheet.socialshare.email
                             </label>
@@ -1001,7 +901,6 @@
                                     </numIndex>
                                 </items>
                             </config>
-                        </TCEforms>
                     </settings.email>
                 </el>
             </ROOT>

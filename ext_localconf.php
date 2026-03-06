@@ -32,5 +32,4 @@ ExtensionManagementUtility::addPageTSConfig(trim(
 				}
 			}
 		}
-
 	'));

@@ -15,11 +15,8 @@ $EM_CONF['flipbook'] = [
     'category' => 'plugin',
     'state' => 'stable',
     'lockType' => '',
-    'version' => '12.0.3',
+    'version' => '13.0.0',
     'constraints' => [
-        'depends' => [
-            'typo3' => '12.4.0-12.4.99',
-        ],
         'conflicts' => [],
         'suggests' => [],
     ],
